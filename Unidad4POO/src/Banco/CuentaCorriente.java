@@ -2,14 +2,16 @@ package Banco;
 
 public class CuentaCorriente {
 	// atributos
-	private float saldo;
-	private int limiteDescubierto;
+	private double saldo;
 	public String nombreTitular;
-	protected String dniTitular;
+	String dniTitular;
+	private int limiteDescubierto;
+	
 	private static String nombreBanco = "Atlantik";//Actividad 4
 
 
 	// constructores
+	//Actividad 1
 	public CuentaCorriente(String nombreTitular, String dniTitular) {
 		this.nombreTitular = nombreTitular;
 		this.dniTitular = dniTitular;
@@ -17,6 +19,7 @@ public class CuentaCorriente {
 		limiteDescubierto = -50;
 	}
 
+		//actividad 2 sobrecargar
 	public CuentaCorriente(float saldo) {
 		this.saldo = saldo;
 		limiteDescubierto = 0;
@@ -31,14 +34,7 @@ public class CuentaCorriente {
 	
 
 	// metodos 
-	public void ingresarDinero(int dinero) {
-		saldo += dinero;
-	}
-
-	public void ingresarDinero(float dinero) {
-		saldo += dinero;
-	}
-
+	// Sacar Dinero
 	public boolean Retirar(float dinero) {
 		boolean aprobado;
 		if (saldo - dinero > -50) {
@@ -49,6 +45,23 @@ public class CuentaCorriente {
 	} 
 	return aprobado;
 }
+//ingresar dinero
+	public void ingresarDinero(int dinero) {
+		saldo += dinero;
+	}
+
+	public void ingresarDinero(float dinero) {
+		saldo += dinero;
+	}
+	
+	
+	
+	//mostrar objeto cuenta corriente
+	@Override
+	public String toString() {
+		return "CuentaCorriente [saldo=" + saldo + ", limiteDescubierto=" + limiteDescubierto + ", nombreTitular="
+				+ nombreTitular + ", dniTitular=" + dniTitular + "]";
+	}
 
 	//getters y setters
 	public float getSaldo() {
