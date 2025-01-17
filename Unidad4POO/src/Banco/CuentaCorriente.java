@@ -64,7 +64,7 @@ public class CuentaCorriente {
 	}
 
 	//getters y setters
-	public float getSaldo() {
+	public double getSaldo() {
 		return saldo;
 	}
 

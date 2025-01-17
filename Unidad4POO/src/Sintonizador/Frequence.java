@@ -11,7 +11,7 @@ public class Frequence {
 	
 	
 	//constructors
-	private Frequence() {
+	public Frequence() {
 		frecuenciActual= FRECUENCIA_MIN;
 	}
 
