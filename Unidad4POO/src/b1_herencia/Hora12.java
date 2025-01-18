@@ -1,6 +1,6 @@
 package b1_herencia;
 
-public class E2_Hora12 extends E1_Hora {
+public class Hora12 extends Hora {
 
 	// atributos
 
@@ -12,7 +12,7 @@ public class E2_Hora12 extends E1_Hora {
 
 	// constructors
 
-	public E2_Hora12(int hora, int minuto, Meridiano mer) {
+	public Hora12(int hora, int minuto, Meridiano mer) {
 		// hora de 0 a 12
 		super(hora, minuto); // el padre permite horas de 0 a 23
 		setHora(hora); // agregamos nuestro método setHORA

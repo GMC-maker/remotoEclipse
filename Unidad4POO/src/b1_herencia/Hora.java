@@ -1,14 +1,14 @@
 package b1_herencia;
 
-public class E1_Hora {
+public class Hora {
 	protected int hora, minuto;
 
 	// constructors
-	public E1_Hora() {
+	public Hora() {
 		super();
 	}
 
-	public E1_Hora(int hora, int minuto) {
+	public Hora(int hora, int minuto) {
 		// hora de 0 a 23
 		super();  // un nuevo objeto que llama a las funciones set y verificar que sus valores
 				// sean correctos entre 0-24h o 0-60m

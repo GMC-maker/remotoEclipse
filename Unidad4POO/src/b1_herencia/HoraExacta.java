@@ -1,6 +1,6 @@
 package b1_herencia;
 
-public class HoraExacta extends E1_Hora {
+public class HoraExacta extends Hora {
 	
 	protected int segundos;
 
@@ -34,6 +34,20 @@ public class HoraExacta extends E1_Hora {
 	@Override
 	public String toString() {
 		return "[" + hora + ":" + minuto + ":"+ segundos +"]";
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		HoraExacta hh4 = (HoraExacta) obj ; //esto es un cast de objeto, ya que para comparar tiene que ser dos elementos iguales.
+		boolean sonIguales = false; 
+		if (this.hora == hh4.hora
+				&& this.minuto == hh4.minuto 
+				&& this.segundos == hh4.segundos) {
+				sonIguales = true;
+		}
+			
+		return sonIguales;
 	}
 	
 	

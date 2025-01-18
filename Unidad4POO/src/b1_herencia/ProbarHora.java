@@ -4,7 +4,7 @@ public class ProbarHora {
 
 	public static void main(String[] args) {
 
-		E1_Hora hh = new E1_Hora(11, 30);
+		Hora hh = new Hora(11, 30);
 		System.out.println("HORA");
 		System.out.println(hh);
 
@@ -21,7 +21,7 @@ public class ProbarHora {
 
 		// Hora12
 		System.out.println("HORA 12");
-		E2_Hora12 hh2 = new E2_Hora12(12, 10, E2_Hora12.Meridiano.AM);
+		Hora12 hh2 = new Hora12(12, 10, Hora12.Meridiano.AM);
 
 		System.out.println(hh2);
 
@@ -36,7 +36,16 @@ public class ProbarHora {
 		
 		HoraExacta hh3 = new HoraExacta(15,15,15);
 		System.out.println(hh3);
-
+		System.out.println();
+		
+		System.out.println("Metodo Equals Hora Exacta ");
+		HoraExacta a = new HoraExacta(10,9,8);
+		HoraExacta b = new HoraExacta(10,9,8);
+		HoraExacta c = new HoraExacta(10,20,30);
+		
+		System.out.println("  " + a.equals(b));
+		System.out.println("  " + a.equals(c));
+	
 	}
 
 }
