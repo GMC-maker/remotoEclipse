@@ -12,11 +12,7 @@ public class IntercambioApp {
  
 		System.out.println("Array de números sin ordenar:");
 		imprimirArray(lista);
-		
-		//obtener el indice 
-		int indice=getIndexOf(TAMANIO,TAMANIO.length,americano);
-		System.out.println("indice "+ indice);
-		
+				
 		//ordenamos el array
 		intercambio(lista);
  

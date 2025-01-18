@@ -72,11 +72,19 @@ public class Examen2009 {
 
 				break;
 			case 2:
-				modeloMasVendido(matrizCochesVendidos, tablaConcesionario, tablaModelo, numConcesionario, numModelo);
+				modeloMasVendido(matrizCochesVendidos, tablaConcesionario, tablaModelo);
 
 				break;
+
 			case 3:
+				
+				System.out.println("Dime el Modelo: ");
+				nombreModelo = sc.next();
+				sc.nextLine();
+				
+				mostrarTablaPorConcesionario(matrizCochesVendidos,tablaConcesionario,tablaModelo,nombreModelo, posConcesionario,posModelo);
 				break;
+				
 			case 4:
 				break;
 			case 5:
@@ -88,15 +96,39 @@ public class Examen2009 {
 
 	}
 
-	private static void modeloMasVendido(int[][] matrizCochesVendidos, String[] tablaConcesionario,
-			String[] tablaModelo, int numConcesionario, int numModelo) {
-
-		for (int i = 0; i < matrizCochesVendidos.length; i++) {
-			for (int j = 0; j < matrizCochesVendidos[i].length; j++) {
-				//debe comparar las cantidades y devolver la posicion
+	private static void mostrarTablaPorConcesionario(int[][] matriz, String[] tablaCon, String[] tablaMod, String elemBuscado,int posC, int posM ) {
+		
+		//busco elemento y que me devuelva el indice? por ejemplo Mercedes.
+		System.out.println(" Modelo : " + tablaMod[getIndexOf(tablaMod,elemBuscado, posM)]);
+		
+		for(int i = 0; i<matriz.length; i++) {
+			for (int j = 0; j<matriz[i].length; j++) {
+				if()
+				System.out.print(" "+ matriz[i][j]);
+				
 			}
+			System.out.println();
 		}
+			
+	}
 
+	private static void modeloMasVendido(int[][] matriz, String[] tablaCon, String[] tablaMod) {
+
+		int maxVendido = Integer.MIN_VALUE;// le doy un valor inicial, siempre y cuando no sea -1; 0 es un dato valido.
+		int posModelo = 0;
+
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz[0].length; j++) {
+
+				if (matriz[i][j]!=-1 && matriz[i][j] >= maxVendido) {  //compara las cantidades y devuelve la posicion
+					maxVendido = matriz[i][j];
+					posModelo = j;
+				}
+				
+			}
+		
+		}
+		System.out.println(" El modelo más Vendido es: "+ tablaMod[posModelo]);
 	}
 
 	private static void mostrarArray(String[] tabla) {

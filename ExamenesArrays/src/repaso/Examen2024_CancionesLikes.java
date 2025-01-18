@@ -23,8 +23,7 @@ public class Examen2024_CancionesLikes {
 			System.out.println(" 1.-Introducir dato. " + "\n 2.-Listar todos los datos "
 					+ "\n 3.-Mostrar las canciones ordenadas alfabeticamente "
 					+ "\n 4.-Mostrar el promedio de likes de un mes concreto "
-					+ "\n 5.-Mostrar si hay alguna canción con datos para todos los meses. "
-					+ "\n 6.-FIN");
+					+ "\n 5.-Mostrar si hay alguna canción con datos para todos los meses. " + "\n 6.-FIN");
 			option = sc.nextInt();
 
 			switch (option) {
@@ -64,12 +63,10 @@ public class Examen2024_CancionesLikes {
 				// mes es i-> fila 0-11, cancion es j->columna 0-9.
 
 				// introduce el dato en la matriz, no la recorro porque guardo un dato a la vez.
-				// pero si ya hay likes tengo que sumar, con lo cual ahora si busco si existen
-				// datos.
-
-				if (hayDatos(numeroLikes, mes - 1, posActualCancion)) {
-					int datoAnterior = numeroLikes[mes - 1][posActualCancion];
-					numeroLikes[mes - 1][posActualCancion] = datoAnterior + numLikes; // lo que hay mas lo nuevo
+				// pero si ya hay likes tengo que sumar, con lo cual ahora si busco si numeroLikes>0 lo suma.
+				
+				if (numeroLikes[mes-1][posActualCancion]>0) {
+					numeroLikes[mes - 1][posActualCancion] += numLikes; // lo que hay mas lo nuevo
 				} else {
 					numeroLikes[mes - 1][posActualCancion] = numLikes;
 				}
@@ -170,22 +167,7 @@ public class Examen2024_CancionesLikes {
 	private static String nombreMes(int n) {
 		String[] month = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre",
 				"Octubre", "Noviembre", "Diciembre" };
-		String nameMes = " ";
-
-		nameMes = month[n];
-
-		return nameMes;
-
-	}
-
-	private static boolean hayDatos(int[][] t, int posI, int posJ) {
-		boolean existe = false;
-
-		if (t[posI][posJ] != -1) {
-			existe = true;
-		}
-
-		return existe;
+		return month[n];
 	}
 
 	private static void verMatriz(int[][] numL) {
