@@ -1,4 +1,4 @@
-package b1_herencia;
+package b1_her;
 
 public class HoraExacta extends Hora {
 	

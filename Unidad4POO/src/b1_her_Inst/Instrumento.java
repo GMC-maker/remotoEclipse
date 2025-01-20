@@ -1,4 +1,4 @@
-package b1_herenci;
+package b1_her_Inst;
 
 public abstract class Instrumento {
 
