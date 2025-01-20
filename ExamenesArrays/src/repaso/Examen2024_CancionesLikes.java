@@ -1,4 +1,4 @@
-package repaso;
+	package repaso;
 
 import java.util.Scanner;
 import java.util.Locale;

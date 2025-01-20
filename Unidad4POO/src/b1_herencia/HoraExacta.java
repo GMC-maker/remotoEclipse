@@ -36,7 +36,7 @@ public class HoraExacta extends Hora {
 		return "[" + hora + ":" + minuto + ":"+ segundos +"]";
 	}
 
-
+	/* Metodo Equals*/
 	@Override
 	public boolean equals(Object obj) {
 		HoraExacta hh4 = (HoraExacta) obj ; //esto es un cast de objeto, ya que para comparar tiene que ser dos elementos iguales.
@@ -49,6 +49,8 @@ public class HoraExacta extends Hora {
 			
 		return sonIguales;
 	}
+	
+
 	
 	
 	
