@@ -82,7 +82,7 @@ public class Examen2009 {
 				nombreModelo = sc.next();
 				sc.nextLine();
 				
-				mostrarTablaPorConcesionario(matrizCochesVendidos,tablaConcesionario,tablaModelo,nombreModelo, posConcesionario,posModelo);
+				//mostrarTablaPorConcesionario(matrizCochesVendidos,tablaConcesionario,tablaModelo,nombreModelo, posConcesionario,posModelo);
 				break;
 				
 			case 4:
@@ -103,7 +103,7 @@ public class Examen2009 {
 		
 		for(int i = 0; i<matriz.length; i++) {
 			for (int j = 0; j<matriz[i].length; j++) {
-				if()
+				//if()
 				System.out.print(" "+ matriz[i][j]);
 				
 			}

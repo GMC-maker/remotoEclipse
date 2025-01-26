@@ -1,4 +1,4 @@
-	package repaso;
+package repaso;
 
 import java.util.Scanner;
 import java.util.Locale;
@@ -63,9 +63,10 @@ public class Examen2024_CancionesLikes {
 				// mes es i-> fila 0-11, cancion es j->columna 0-9.
 
 				// introduce el dato en la matriz, no la recorro porque guardo un dato a la vez.
-				// pero si ya hay likes tengo que sumar, con lo cual ahora si busco si numeroLikes>0 lo suma.
-				
-				if (numeroLikes[mes-1][posActualCancion]>0) {
+				// pero si ya hay likes tengo que sumar, con lo cual ahora si busco si
+				// numeroLikes>0 lo suma.
+
+				if (numeroLikes[mes - 1][posActualCancion] > 0) {
 					numeroLikes[mes - 1][posActualCancion] += numLikes; // lo que hay mas lo nuevo
 				} else {
 					numeroLikes[mes - 1][posActualCancion] = numLikes;
@@ -89,10 +90,18 @@ public class Examen2024_CancionesLikes {
 
 				break;
 			case 4:
+
 				System.out.println("Indica el mes para ver el promedio: ");
 				int verMes = sc.nextInt();
-				System.out.println(nombreMes(verMes) + " " + promedioMes(numeroLikes, verMes));
+
+				if (promedioMes(numeroLikes, verMes) < 0) {
+					System.out.println("No hay likes para este mes. ");
+				} else {
+					System.out.println(nombreMes(verMes) + " " + promedioMes(numeroLikes, verMes));
+				}
+
 				break;
+
 			case 5:
 
 				if (topSong(listaCanciones, numCancion, numeroLikes)) {
@@ -153,6 +162,7 @@ public class Examen2024_CancionesLikes {
 	private static void salidaConFormato(int[][] t, String[] lista, int numElem) {
 
 		for (int i = 0; i < t.length; i++) {
+			// que hago si quiero que no imprima el mes si no hay datos?
 			System.out.println(nombreMes(i) + ": ");
 			for (int j = 0; j < t[i].length; j++) {
 				if (t[i][j] != -1) {
