@@ -1,4 +1,4 @@
-package b1_her;
+package b1_reloj;
 
 public class HoraExacta extends Hora {
 	
