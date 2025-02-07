@@ -14,17 +14,6 @@ public class P1 {
 		System.out.println(Arrays.toString(nombres));
 		
 		
-	/*	System.out.println(Arrays.toString(numeros));
-		
-		
-		Scanner sc = new Scanner(System.in);
-	    
-		System.out.println(" Introduce 5 numeros decimales");
-		for (int i = 0; i < numeros.length; i++) {
-			numeros[i]=sc.nextFloat();
-		}
-		
-		System.out.println(Arrays.toString(numeros));*/
 		
 		
 

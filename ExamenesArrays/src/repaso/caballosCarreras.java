@@ -11,13 +11,12 @@ public class caballosCarreras {
 		sc.useLocale(Locale.US);
 		int opcion;
 
-		int numCabReg = 15, numCarrReg = 10;
-		String[] tCaballos = new String[numCabReg];
+		String[] tCaballos = new String[15];
 		String[] tCiudades = new String[10];
 
 		double[][] matrizVelocidad = new double[10][15];
 		int posCiudad = 0;
-		int posCaballos = 0;
+		int numCaballos = 0;
 
 		do {
 
@@ -29,16 +28,16 @@ public class caballosCarreras {
 			opcion = sc.nextInt();
 
 			String nombreCaballo = " ";
-			String nombreCiudad;
+			String nombreCiudad = " ";
 			int carrera;
-			double velocidadMedia;
 
 			switch (opcion) {
 			case 1:
 				System.out.println(" Nombre del Caballo: ");
 				nombreCaballo = sc.next();
+				sc.nextLine();
 				System.out.println(" No. de Carrera: ");
-				carrera = sc.nextInt();
+				carrera = sc.nextInt()-1;
 				posCiudad = carrera;
 				// si la carrera no se ha registrado antes, se pedira la ciudad.
 
@@ -50,17 +49,15 @@ public class caballosCarreras {
 
 				int posActual = getIndexOf(tCaballos, nombreCaballo); // obtener la posicion de Caballo para poder
 																		// guardar datos en la matriz.
-
 				if (posActual == -1) {
-					posActual = posCaballos;
+					posActual = numCaballos;
 					tCaballos[posActual] = nombreCaballo;
-					posCaballos++;
-
+					numCaballos++;
 				}
 
 				// ahora guardaremos la velocidad media.
 				System.out.println("Dime la velocidad media del caballo " + nombreCaballo);
-				matrizVelocidad[carrera - 1][posActual] = sc.nextDouble();
+				matrizVelocidad[carrera][posActual] = sc.nextDouble();
 
 				break;
 
@@ -68,6 +65,7 @@ public class caballosCarreras {
 				System.out.println(Arrays.toString(tCaballos));
 				System.out.println(Arrays.toString(tCiudades));
 				verMatriz(matrizVelocidad);
+				verMatrizF(matrizVelocidad, tCaballos, tCiudades);
 
 				break;
 			case 3:
@@ -79,7 +77,7 @@ public class caballosCarreras {
 				break;
 			case 5:
 				// listado Ordenado por Caballo
-				porCaballo(tCaballos, posCaballos, matrizVelocidad);
+				porCaballo(tCaballos, numCaballos, matrizVelocidad);
 
 				break;
 			}
@@ -90,9 +88,9 @@ public class caballosCarreras {
 
 	private static void porCaballo(String[] tCabal, int posCabal, double[][] matrizV) {
 
-		String [] copiaCabal = Arrays.copyOf(tCabal, posCabal);
+		String[] copiaCabal = Arrays.copyOf(tCabal, posCabal);
 		Arrays.sort(copiaCabal);
-		
+
 		for (int j = 0; j < posCabal; j++) {
 			for (int i = 0; i < matrizV[j].length; i++) {
 
@@ -149,12 +147,29 @@ public class caballosCarreras {
 		System.out.println(" La Ciudad con más Carreras " + ciudadMax);
 	}
 
-	private static void verMatriz(double[][] matrizVelocidad) {
+	private static void verMatrizF(double[][] matriz, String[] tCaballos, String[] tCiudades) {
 
-		for (int i = 0; i < matrizVelocidad.length; i++) {
+		for (int i = 0; i < tCaballos.length; i++) {
+			if (tCaballos[i] != null) {
+				System.out.println("Caballo: " + tCaballos[i]);
+
+				for (int j = 0; j < 10; j++) {
+					if (matriz[j][i] > 0) { //de j i porque estoy saltando hacia abajo en las lineas
+						System.out.println("Carrera " + j + "(" + tCiudades[j] + "): " + matriz[j][i]);
+					}
+				}
+
+			}
+
+		}
+	}
+
+	private static void verMatriz(double[][] matriz) {
+
+		for (int i = 0; i < matriz.length; i++) {
 			System.out.print("[ ");
-			for (int j = 0; j < matrizVelocidad[i].length; j++) {
-				System.out.print(matrizVelocidad[i][j] + " ");
+			for (int j = 0; j < matriz[i].length; j++) {
+				System.out.print(matriz[i][j] + " ");
 			}
 			System.out.print(" ]\n");
 		}
