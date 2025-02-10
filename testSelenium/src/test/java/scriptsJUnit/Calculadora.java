@@ -1,4 +1,4 @@
-package scripts;
+package scriptsJUnit;
 
 	public class Calculadora {
 		private int num1;

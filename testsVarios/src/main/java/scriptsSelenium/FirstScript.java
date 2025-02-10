@@ -1,4 +1,4 @@
-package scripts;
+package scriptsSelenium;
 
 import java.time.Duration;
 import org.openqa.selenium.By;
