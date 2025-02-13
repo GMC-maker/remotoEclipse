@@ -25,5 +25,17 @@ package scriptsJUnit;
 		public int divide() {
 			return num1 / num2;
 		}
+		
+	    public int valorAbsoluto() {
+	        return restaPositiva() ? num1 - num2 : num2 - num1;
+	    }
+
+	    public boolean restaPositiva() {
+	        return this.num1 >= this.num2;
+	    }
+
+	    public Integer divideAcepta0() {
+	        return num2 == 0 ? null : num1 / num2;
+	    }
 	}
 
