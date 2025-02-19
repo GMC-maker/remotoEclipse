@@ -29,7 +29,7 @@ class CalculadorTestII {
 	@Test
 	void testDivide() {
 		Calculadora c = new Calculadora(20,10);
-		Assertions.assertEquals(20,c.divide(),0);
+		Assertions.assertEquals(2,c.divide(),0);
 		
 	}
 
